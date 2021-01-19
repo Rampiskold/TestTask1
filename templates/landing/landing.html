@@ -1,0 +1,16 @@
+{% extends 'Base.html'%}
+{% load blocks %}
+
+{% block title %} Домашняя страница {% endblock %}
+{% block content %} 
+
+    {% popular_news %}
+
+    {% new_news %}
+
+    {% news_filtered_by_tag %}
+
+    {% send_mail request %}
+
+
+{% endblock %}

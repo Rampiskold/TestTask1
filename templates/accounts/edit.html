@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Редактирование аккаунта{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron mt-5">
+        <h1>Редактирование профиля</h1>
+        <p>Вы можете редактировать свою учетную запись, используя следующую форму:</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+
+    <div class="jumbotron">
+        <h1>Все активные пользователи:</h1>
+        <ul class="list-group">
+            {% for user in  active_users %}
+                <li class="list-group-item">{{ user }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

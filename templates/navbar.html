@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="{% url 'landing:landing' %}">Тестовое Задание</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% if request.user.is_authenticated %}
+            <a type="button" class="btn btn-outline-success ml-2" href="{% url 'account:edit' %}">
+                <i class="fas fa-user-tie"></i> 
+                {{request.user}}
+            </a>
+            <span>
+                <a class="ml-3" href="{% url 'account:logout'%}">Выйти</a>
+            </span>
+        {% else %}
+            <a type="button" class="btn btn-outline-danger ml-2" href="{% url 'account:login' %}">
+                Войти
+            </a>
+            <a type="button" class="btn btn-outline-danger ml-2" href="{% url 'account:register' %}">
+                Зарегистрироваться
+            </a>
+        {% endif %}
+
+    </div>
+</nav>

@@ -1,0 +1,43 @@
+{% extends 'Base.html'%}
+
+{% block title %} Регистрация {% endblock %}
+{% block content %} 
+
+
+<div class="row justify-content-md-center mt-5 mb-5">
+    <div class="card w-25">
+        <div class="card-body">
+            <h4 class="card-title">Регистрация</h4>
+            <form method="POST" action="">
+
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label> {{form.username.label}} </label>
+                    {{form.username}}
+                </div>
+
+                <div class="form-group">
+                    <label> {{form.email.label}} </label>
+                    {{form.email}}
+                </div>
+
+                <div class="form-group">
+                    <label> {{form.password1.label}} </label>
+                    <br>
+                    {{form.password1}}
+                </div>
+
+                <div class="form-group">
+                    <label> {{form.password2.label}} </label>
+                    {{form.password2}}
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            </form>
+            {{form.errors}}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

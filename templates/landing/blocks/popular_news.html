@@ -1,0 +1,31 @@
+<div class="jumbotron">
+    
+    <div class="row ">
+        <h1>Самые популярные статьи</h1>
+    </div>
+
+    <div class="row mt-5">
+    
+        <div class="col-6">
+            {% for n in popular_news %}
+                {% if  n.main %}
+                    <div style="text-align: center;">
+                        <h3>{{ n.title }}</h3>
+                        <img src="{{ MEDIA_URL }}/media/{{ n.img }}" class="d-block w-100" style="max-width: 800px; max-height: 500px; margin-top: 20px; margin-bottom: 20px;">
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="col-4">
+            <ul class="list-group">
+                {% for n in popular_news %}
+                    {% if  n.main == False %}
+                        <li class="list-group-item mt-1"><b>{{ n.title }}</b></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</div>

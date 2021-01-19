@@ -1,0 +1,24 @@
+<div class="jumbotron">
+
+    <div class="row">
+        <h1>Задайте нам вопрос</h1>
+    </div>
+
+    <form method="POST" action="">
+
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label>Введите email</label>
+            {{ form.email }}
+        </div>
+
+        <div class="form-group">
+            <label>Напишите вопрос</label>
+            {{ form.message }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="jumbotron">
+
+    <div class="row">
+        <h1>Новые статьи</h1>
+    </div>
+
+    <div class="row justify-content-md-center text-center">
+        {% for n in new_news %}
+            <div class="col-md-auto">
+                <img src="{{ MEDIA_URL }}/media/{{ n.img }}" class="d-block w-100" style="max-width: 150px; max-height: 150px; margin-top: 20px; margin-bottom: 20px;">
+                <h4>{{ n.title }}</h4>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+    
+    
+
+
+
+
